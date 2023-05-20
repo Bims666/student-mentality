@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mental Health Website</title>
+	<script>
+		function toggleNavbar() {
+			var navbar = document.getElementById("navbar");
+			navbar.classList.toggle("active");
+		}
+
+		function scrollToSection(sectionId) {
+			var section = document.getElementById(sectionId);
+			section.scrollIntoView({ behavior: 'smooth' });
+		}
+
+		function showPopup() {
+			var popup = document.getElementById("popup");
+			popup.style.display = "block";
+		}
+
+		function closePopup() {
+			var popup = document.getElementById("popup");
+			popup.style.display = "none";
+		}
+	</script>
+	<style>
+		.navbar.active {
+			display: block;
+		}
+
+		.popup {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff;
+			padding: 20px;
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<button class="menu-toggle" onclick="toggleNavbar()">Menu</button>
+			<ul id="navbar">
+				<li><a href="#" onclick="scrollToSection('home')">Home</a></li>
+				<li><a href="#" onclick="scrollToSection('about')">About</a></li>
+				<li><a href="#" onclick="scrollToSection('services')">Services</a></li>
+				<li><a href="#" onclick="scrollToSection('contact')">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="home">
+			<h2>Welcome to Mental Health Website</h2>
+			<p>Discover resources and support for your mental health journey.</p>
+		</section>
+		<section id="about">
+			<h2>About Us</h2>
+			<p>We are dedicated to promoting mental well-being and providing valuable information to improve mental health.</p>
+		</section>
+		<section id="services">
+			<h2>Our Services</h2>
+			<p>We offer a range of services including therapy, counseling, and workshops to support individuals and families.</p>
+		</section>
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<p>Get in touch with our team for inquiries, appointments, or any questions you may have.</p>
+		</section>
+		<button onclick="showPopup()">Open Popup</button>
+		<div id="popup" class="popup">
+			<h3>Popup Content</h3>
+			<p>This is a popup window that can display additional information or ask for user input.</p>
